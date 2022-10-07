@@ -1,0 +1,24 @@
+body {
+	font-family: times new roman;
+	border-style: groove;
+	border-width: 3px;
+	font-size: 20px
+}
+.satu{
+	margin-left: 40px
+}
+.dua{
+	margin: 20px;
+	background: #E4E2FF
+}
+.tiga{
+	margin: 20px;
+	background: #FFE2EC;
+}
+.empat{
+	margin: 20px;
+	background: #E4FFE2;
+}
+.lima{
+	margin-left: 40px
+}

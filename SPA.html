@@ -1,0 +1,68 @@
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="punyamara.css">
+
+		<title>Single Page Applications</title>
+	</head>	
+	<script>
+	var pages = {
+		'home' : `Welcome. This is my home page!<br/>`,
+		'aboutme' : `This is About me<br/>`,
+		'services' : `Services page<br/><br/>`,
+		'contact' : `Contact me!!<br/><br/>`
+	};
+
+	function getPageContent(page){
+		var contentToReturn;
+		switch(page){
+			case 'home':
+				contentToReturn = pages.home;
+				break;
+			case 'aboutme':
+				contentToReturn = pages.aboutme;
+				break;
+			case 'services':
+				contentToReturn = pages.services;
+				break;
+			case 'contact':
+				contentToReturn = pages.contact;
+				break;
+			default:
+				contentToReturn = pages.home;
+				break;				
+		}
+		document.getElementById('content').innerHTML = contentToReturn; 
+	}
+	</script>
+<body onload="getPageContent('home')">
+
+	<div style="width:10%; float: left; background: #eee;height: 100%;">
+		<ul class="navbar-nav nav-justified w-100">
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('home')">
+					Home
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('aboutme')">
+					About Me
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('services')">
+					Services
+				</a>
+			</li>
+			<li style="line-height: 50px;">
+				<a href="#" onclick="getPageContent('contact')">
+					Contact
+				</a>
+			</li>
+		</ul>
+	</div>
+<div style="width: 90%;float: right; background: #999;color:#fff; height: 100%;font-size: 50px;"><p style="margin-left: 50px;" id="content"><p></div>
+</body>
+
+</html>

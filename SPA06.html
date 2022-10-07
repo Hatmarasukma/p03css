@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>SPA06</title>
+	<style type="text/css">
+		*{
+			font-family: sans-serif;
+		}
+		header{
+		text-align: left;
+		color: #A52A2A;
+		}
+		 
+		header .judul{
+			font-size: 25pt;
+		}
+
+		body{
+			background-color: white;
+		}
+
+		.navigasi{
+			background-color: #A52A2A;
+			padding: 10px;
+		}
+
+		.menu{
+			padding: 10px;
+			color: white;
+		}
+		.menu:hover{
+			cursor: pointer;
+			background-color: #D2B48C;
+		}
+
+		.aktif{
+			background-color: #D2B48C;
+		}
+
+		.home{
+			background-color: #F5F5DC;
+			padding: 10px;
+		}
+
+		.isi{
+			display: none;
+			background-color: #F5F5DC;
+			padding: 10px;
+		}
+	</style>
+</head>
+
+<header>
+	<h1 class="judul">HatmaraSukma's Page</h1>
+</header>
+<body>
+	<div class="navigasi">
+		<span class="menu aktif" id="menu_1">Home</span>
+		<span class="menu" id="menu_2">About</span>
+		<span class="menu" id="menu_3">Challenge</span>
+		<span class="menu" id="menu_4">Contact</span>
+	</div>
+	<div class="home" id="isi_1">
+		<h2>Welcome to my page!!</h2>
+	</div>
+	<div class="isi" id="isi_2">
+		<h2>About Me</h2>
+		<p>Disini kamu bisa mengenalku lebih banyak:)</p>
+	</div>
+	<div class="isi" id="isi_3">
+		<h2>Kumpulan Challenge Qwars</h2>
+	</div>
+	<div class="isi" id="isi_4">
+		<h2>Let's contact me</h2>
+		<p>Kita bisa bicara lebih banyak disini:)</p>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		    $(".menu").click(function(){
+		        let menu_id = $(this).prop('id');
+		        let split = menu_id.split('_');
+		        let id = split[1];
+
+		        $(".menu").removeClass('aktif');
+		        $("#menu_"+id).addClass('aktif');
+
+		        $(".home").slideUp();
+		        $("#isi_1").slideUp();
+		        $("#isi_2").slideUp();
+		        $("#isi_3").slideUp();
+		        $("#isi_4").slideUp();
+		        $("#isi_"+id).slideToggle();
+		    });
+		});
+	</script>
+</body>
+</html>
